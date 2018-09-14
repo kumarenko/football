@@ -2,10 +2,12 @@ a {
   text-decoration: none;
   color: inherit;
 }
+
 * {
   margin: 0;
   padding: 0;
 }
+
 body {
   .wrapper {
     width: 98%;
@@ -68,4 +70,38 @@ body {
       }
     }
   }
+  //  end header styles
+  .navigation {
+    min-height: 100px;
+    background-color: #1e2022;
+    .wrapper {
+      display: flex;
+      min-height: inherit;
+      align-items: center;
+
+      .line {
+        display: flex;
+        align-items: center;
+        .logo {
+          color: #feffff;
+        }
+        ul {
+          font-size: 0;
+          li {
+            display: inline-block;
+            list-style: none;
+            color: #878889;
+            margin-left: 30px;
+            font-size: 16px;
+            &:hover {
+              border-bottom: 2px solid red;
+
+            }
+          }
+        }
+      }
+    }
+
+  }
+
 }
