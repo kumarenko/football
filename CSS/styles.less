@@ -1,11 +1,13 @@
-a {
-  text-decoration: none;
-  color: inherit;
-}
 
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
 body {
@@ -13,6 +15,9 @@ body {
     width: 98%;
     max-width: 1180px;
     margin: 0 auto;
+  }
+  .underline {
+    text-decoration: underline;
   }
   header {
     .top-line {
@@ -73,22 +78,37 @@ body {
   //  end header styles
   .navigation {
     min-height: 100px;
-    background-color: #1e2022;
+    background-color: #52616b;
+
     .wrapper {
       display: flex;
       min-height: inherit;
+      height: 100%;
       align-items: center;
+      width: 100%;
+      justify-content: flex-end;
 
       .line {
         display: flex;
+        height: 100%;
+        min-height: 100px;
+        min-width: 960px;
         align-items: center;
+        padding-left: 70px;
+        background-color: #1e2022;
         .logo {
           color: #feffff;
         }
         ul {
           font-size: 0;
+          min-height: 100px;
+          display: flex;
+          align-items: center;
           li {
-            display: inline-block;
+            display: flex;
+            height: 100px;
+            align-items: center;
+            border-bottom: 2px solid transparent;
             list-style: none;
             color: #878889;
             margin-left: 30px;
@@ -103,5 +123,103 @@ body {
     }
 
   }
+  // end navigation styles
+  main {
+    // ssection
+    .top-slider {
+      .slider {
+        position: relative;
+        figure {
+          position: relative;
+          figcaption {
+          }
+        }
+        &-slide-1 {
+          position: relative;
+          width: 100%;
+          height: auto;
+        }
+        &-prev-button,
+        &-next-button {
+          position: absolute;
+          top: 40%;
+          height: 70px;
+          margin: 0 auto;
+          width: 110px;
+          font-size: 14px;
+          border: none;
+          border-radius: 0;
+          color: #fff;
+          background-color: #52616b;
+          cursor: pointer;
+        }
+        &-prev-button {
+          left: 0;
+          clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
+        }
+        &-next-button {
+          right: 0;
+          clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 20% 100%);
+        }
 
+        // figcaption
+        .play {
+
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          margin-left: 12%;
+          display: flex;
+          flex-direction: column;
+          align-items: start;
+          justify-content: center;
+          height: 100%;
+          &>span {
+            margin-top: 10px;
+          }
+          &-date {
+color: #fff;
+          }
+          &-teams {
+            height: 60px;
+            background-color: #fff;
+            color: #ff5d6e;
+            padding: 18px 25px;
+            font-size: 20px;
+            font-weight: 600;
+            width: 250px;
+          }
+          &-place {
+            height: 50px;
+            font-weight: 600;
+            color: #1e2022;
+            padding: 18px 25px;
+            background-color: #fff;
+          }
+          &-timer {
+            display: flex;
+            justify-content: space-evenly;
+            width: 200px;
+            color: #fff;
+            & > span {
+              &>span {
+                &:first-child {
+                  font-size: 22px;
+                  font-weight: 600;
+                }
+                &:last-child {
+                  font-size: 10px;
+                }
+              }
+
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+            }
+          }
+        }
+      }
+    }
+  }
 }
